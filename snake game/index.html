@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Snake</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <h1 class="title">Snake</h1>
+
+  <div class="score-row">
+    <span>Score: <span id="score">0</span></span>
+    <span>Best: <span id="best-score">0</span></span>
+  </div>
+
+  <div id="banner" class="result-banner hidden">Game over!</div>
+
+  <div class="board-box">
+    <canvas id="board" width="300" height="300"></canvas>
+  </div>
+
+  <button class="mode-btn mode-btn--single" id="btn-start">
+    <span class="mode-text"><span class="mode-title">Start game</span></span>
+  </button>
+
+  <!-- on-screen d-pad controls -->
+  <div class="dpad">
+    <button class="dpad-btn dpad-up" data-dir="up">▲</button>
+    <div class="dpad-mid">
+      <button class="dpad-btn dpad-left" data-dir="left">◀</button>
+      <button class="dpad-btn dpad-down" data-dir="down">▼</button>
+      <button class="dpad-btn dpad-right" data-dir="right">▶</button>
+    </div>
+  </div>
+
+  <p class="hint-text">Swipe on the board or use the arrows to move</p>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

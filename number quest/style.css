@@ -1,0 +1,192 @@
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --border: #444444;
+  --green: #4caf50;
+  --red: #ff4d4d;
+  --blue: #6fb8ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Mono', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.crt {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 28px 28px 18px;
+}
+
+.banner pre {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--text);
+}
+
+.screen { display: none; }
+.screen.active { display: block; }
+
+.prompt {
+  margin: 0 0 16px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--text);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.opt {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  text-align: left;
+  padding: 12px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.15s;
+}
+
+.opt:hover, .opt:focus-visible {
+  background: rgba(255,255,255,0.08);
+  outline: none;
+}
+
+.opt .key { font-weight: 700; color: var(--text); }
+.opt .meta { margin-left: auto; opacity: 0.6; font-size: 12px; }
+
+.attempts-line {
+  font-size: 12px;
+  opacity: 0.7;
+  margin: 0 0 18px;
+  color: var(--text);
+}
+
+#guessForm {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+#guessInput {
+  flex: 1;
+  background: #000;
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px 12px;
+}
+
+#guessInput:focus { outline: 1px solid var(--text); }
+
+#guessForm button {
+  background: var(--text);
+  color: #000;
+  border: none;
+  font-family: inherit;
+  font-weight: 700;
+  padding: 10px 16px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+#guessForm button:hover { filter: brightness(0.9); }
+
+.feedback {
+  min-height: 48px;
+  font-size: 14px;
+  margin-bottom: 14px;
+  white-space: pre-line;
+  color: var(--text);
+}
+
+.feedback.low { color: var(--blue); }
+.feedback.high { color: var(--red); }
+
+.meter {
+  height: 6px;
+  background: #1a1a1a;
+  border: 1px solid var(--border);
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--text);
+  transition: width 0.3s ease;
+}
+
+.history {
+  font-size: 12px;
+  opacity: 0.7;
+  word-break: break-word;
+  color: var(--text);
+}
+
+.history-label { opacity: 0.6; margin-right: 6px; }
+
+#resultBox {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  white-space: pre-line;
+  color: var(--text);
+}
+
+#resultBox .win { color: var(--green); font-weight: 700; font-size: 16px; }
+#resultBox .lose { color: var(--red); font-weight: 700; font-size: 16px; }
+
+#playAgainBtn {
+  background: transparent;
+  border: 1px solid var(--text);
+  color: var(--text);
+  font-family: inherit;
+  font-weight: 700;
+  padding: 10px 16px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+#playAgainBtn:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.footer {
+  margin-top: 20px;
+  font-size: 11px;
+  opacity: 0.4;
+  text-align: center;
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .crt { padding: 20px 16px 14px; }
+  .opt .meta { display: none; }
+}

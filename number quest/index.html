@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number Quest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="crt">
+
+  <header class="banner">
+    <pre>================================
+     NUMBER QUEST
+================================</pre>
+  </header>
+
+  <main id="app">
+
+    <!-- DIFFICULTY SCREEN -->
+    <section id="screen-difficulty" class="screen active">
+      <p class="prompt">&gt; select difficulty</p>
+      <div class="options">
+        <button class="opt" data-diff="1">
+          <span class="key">[1]</span> EASY <span class="meta">1–50 · 10 attempts</span>
+        </button>
+        <button class="opt" data-diff="2">
+          <span class="key">[2]</span> MEDIUM <span class="meta">1–100 · 7 attempts</span>
+        </button>
+        <button class="opt" data-diff="3">
+          <span class="key">[3]</span> HARD <span class="meta">1–200 · 5 attempts</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="screen-game" class="screen">
+      <p class="prompt" id="rangeText"></p>
+      <p class="attempts-line" id="attemptsText"></p>
+
+      <form id="guessForm" autocomplete="off">
+        <input type="number" id="guessInput" placeholder="your guess" required>
+        <button type="submit">GUESS</button>
+      </form>
+
+      <div id="feedback" class="feedback"></div>
+
+      <div class="meter">
+        <div class="meter-fill" id="meterFill"></div>
+      </div>
+
+      <div class="history">
+        <span class="history-label">history:</span>
+        <span id="historyList"></span>
+      </div>
+    </section>
+
+    <!-- RESULT SCREEN -->
+    <section id="screen-result" class="screen">
+      <div id="resultBox"></div>
+      <button id="playAgainBtn">PLAY AGAIN (y)</button>
+    </section>
+
+  </main>
+
+  <footer class="footer">Number Quest — a terminal guessing game</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

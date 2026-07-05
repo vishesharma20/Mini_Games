@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tic Tac Toe</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ===== HOME SCREEN ===== -->
+  <section id="home-screen" class="screen active">
+    <h1 class="title">TIC · TAC · TOE</h1>
+
+    <div class="preview-board" id="preview-board">
+      <!-- filled by JS to preview the currently selected icon set -->
+    </div>
+
+    <h2 class="section-label">Choose your icons</h2>
+    <div class="icon-set-grid" id="icon-set-grid"></div>
+
+    <div class="upload-row">
+      <label class="upload-btn">
+        Upload icon for Player 1
+        <input type="file" accept="image/*" id="upload-p1" class="hidden">
+      </label>
+      <label class="upload-btn">
+        Upload icon for Player 2
+        <input type="file" accept="image/*" id="upload-p2" class="hidden">
+      </label>
+    </div>
+
+    <h2 class="section-label">Computer difficulty</h2>
+    <div class="difficulty-row" id="difficulty-row">
+      <button class="diff-btn" data-diff="easy">Easy</button>
+      <button class="diff-btn active" data-diff="medium">Medium</button>
+      <button class="diff-btn" data-diff="hard">Hard</button>
+    </div>
+
+    <button class="play-btn" id="btn-vs-computer">
+      <span class="play-icon">🧑</span> vs <span class="play-icon">🖥️</span>
+    </button>
+
+    <button class="play-btn" id="btn-vs-friend">
+      <span class="play-icon">🧑</span> vs <span class="play-icon">🧑</span>
+    </button>
+  </section>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <section id="game-screen" class="screen">
+    <button class="back-btn" id="btn-back">←</button>
+
+    <p class="turn-indicator" id="turn-indicator">Your turn</p>
+
+    <div class="board-wrap">
+      <div class="board" id="board"></div>
+      <svg id="win-line" class="win-line hidden" viewBox="0 0 300 300"></svg>
+    </div>
+
+    <div id="result-banner" class="result-banner hidden"></div>
+
+    <p class="score-line" id="score-line">P1: 0 &nbsp;|&nbsp; P2: 0 &nbsp;|&nbsp; Draws: 0</p>
+
+    <button class="play-btn play-btn--small" id="btn-play-again">Play again</button>
+    <button class="skip-btn" id="btn-reset-score">Reset score</button>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

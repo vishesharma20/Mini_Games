@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Paper Scissors</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ===== HOME SCREEN ===== -->
+  <section id="home-screen" class="screen active">
+    <h1 class="title">Rock Paper Scissors</h1>
+    <div class="hero-emoji">✊🖐️✌️</div>
+    <p class="subtitle">Choose how you want to play</p>
+
+    <button class="mode-btn" id="btn-vs-computer">
+      <span class="mode-emoji">🤖</span>
+      <span class="mode-text">
+        <span class="mode-title">Play vs Computer</span>
+        <span class="mode-desc">You against the machine</span>
+      </span>
+    </button>
+
+    <button class="mode-btn" id="btn-vs-friend">
+      <span class="mode-emoji">🧑‍🤝‍🧑</span>
+      <span class="mode-text">
+        <span class="mode-title">Play vs Friend</span>
+        <span class="mode-desc">Pass the device, take turns</span>
+      </span>
+    </button>
+  </section>
+
+  <!-- ===== COMPUTER MODE SCREEN ===== -->
+  <section id="computer-screen" class="screen">
+    <button class="back-btn" data-back="home-screen">←</button>
+
+    <h2 class="section-label">Computer</h2>
+    <div class="hand-box">
+      <span id="computer-hand" class="hand-emoji">❔</span>
+    </div>
+
+    <div id="computer-result" class="result-banner">Make your move!</div>
+
+    <h2 class="section-label">Player</h2>
+    <div class="hand-box">
+      <span id="player-hand" class="hand-emoji">❔</span>
+    </div>
+
+    <p class="score-line">Your score: <span id="computer-score">0</span> &nbsp;|&nbsp; Computer: <span id="cpu-score">0</span></p>
+
+    <div class="choice-row">
+      <button class="choice-btn" data-choice="paper">
+        <span class="choice-emoji">🖐️</span>
+        <span>paper</span>
+      </button>
+      <button class="choice-btn" data-choice="rock">
+        <span class="choice-emoji">✊</span>
+        <span>rock</span>
+      </button>
+      <button class="choice-btn" data-choice="scissors">
+        <span class="choice-emoji">✌️</span>
+        <span>scissors</span>
+      </button>
+    </div>
+
+    <button class="reset-btn" id="reset-computer">Reset score</button>
+  </section>
+
+  <!-- ===== FRIEND MODE: PLAYER 1 TURN ===== -->
+  <section id="friend-turn1-screen" class="screen">
+    <button class="back-btn" data-back="home-screen">←</button>
+
+    <h2 class="section-label">Player 1's turn</h2>
+    <div class="hand-box hand-box--hidden">
+      <span class="hand-emoji">🙈</span>
+    </div>
+    <p class="hint-text">Pick your move. Player 2 won't see it.</p>
+
+    <div class="choice-row">
+      <button class="choice-btn" data-friend-choice="paper" data-player="1">
+        <span class="choice-emoji">🖐️</span>
+        <span>paper</span>
+      </button>
+      <button class="choice-btn" data-friend-choice="rock" data-player="1">
+        <span class="choice-emoji">✊</span>
+        <span>rock</span>
+      </button>
+      <button class="choice-btn" data-friend-choice="scissors" data-player="1">
+        <span class="choice-emoji">✌️</span>
+        <span>scissors</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== FRIEND MODE: PASS DEVICE ===== -->
+  <section id="friend-pass-screen" class="screen">
+    <div class="pass-content">
+      <span class="pass-emoji">📱</span>
+      <h2 class="section-label">Player 1 locked in!</h2>
+      <p class="hint-text">Pass the device to Player 2.<br>No peeking, Player 1!</p>
+      <button class="mode-btn mode-btn--single" id="btn-ready-p2">
+        <span class="mode-text"><span class="mode-title">I'm Player 2, ready!</span></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== FRIEND MODE: PLAYER 2 TURN ===== -->
+  <section id="friend-turn2-screen" class="screen">
+    <h2 class="section-label">Player 2's turn</h2>
+    <div class="hand-box hand-box--hidden">
+      <span class="hand-emoji">🙈</span>
+    </div>
+    <p class="hint-text">Pick your move to reveal the result.</p>
+
+    <div class="choice-row">
+      <button class="choice-btn" data-friend-choice="paper" data-player="2">
+        <span class="choice-emoji">🖐️</span>
+        <span>paper</span>
+      </button>
+      <button class="choice-btn" data-friend-choice="rock" data-player="2">
+        <span class="choice-emoji">✊</span>
+        <span>rock</span>
+      </button>
+      <button class="choice-btn" data-friend-choice="scissors" data-player="2">
+        <span class="choice-emoji">✌️</span>
+        <span>scissors</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== FRIEND MODE: REVEAL ===== -->
+  <section id="friend-reveal-screen" class="screen">
+    <button class="back-btn" data-back="home-screen">←</button>
+
+    <h2 class="section-label">Player 1</h2>
+    <div class="hand-box">
+      <span id="p1-hand" class="hand-emoji">❔</span>
+    </div>
+
+    <div id="friend-result" class="result-banner">—</div>
+
+    <h2 class="section-label">Player 2</h2>
+    <div class="hand-box">
+      <span id="p2-hand" class="hand-emoji">❔</span>
+    </div>
+
+    <p class="score-line">Player 1: <span id="p1-score">0</span> &nbsp;|&nbsp; Player 2: <span id="p2-score">0</span></p>
+
+    <button class="mode-btn mode-btn--single" id="btn-play-again">
+      <span class="mode-text"><span class="mode-title">Play again</span></span>
+    </button>
+    <button class="reset-btn" id="reset-friend">Reset scores</button>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+:root {
+  --green-bg: #9acb34;
+  --green-dark: #4f7a1f;
+  --green-darker: #33530f;
+  --card-bg: #f7f7f2;
+  --banner-yellow: #f7b731;
+  --banner-text: #4a3200;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --radius: 16px;
+  --snake-color: #33530f;
+  --food-color: #e74c3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: var(--green-bg);
+  color: var(--green-darker);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  max-width: 420px;
+  min-height: 100vh;
+  padding: 24px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--green-darker);
+  margin: 8px 0 16px;
+}
+
+.score-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  color: var(--green-darker);
+  padding: 0 6px;
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.result-banner {
+  width: 100%;
+  background: var(--banner-yellow);
+  color: var(--banner-text);
+  font-weight: 700;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.board-box {
+  border: 3px dashed var(--green-darker);
+  border-radius: 12px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  margin-bottom: 18px;
+}
+
+#board {
+  display: block;
+  background: #eef3df;
+  border-radius: 6px;
+  touch-action: none;
+}
+
+/* ===== start / restart button ===== */
+.mode-btn {
+  width: 100%;
+  background: var(--card-bg);
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 3px 0 var(--shadow);
+  cursor: pointer;
+  transition: transform 0.08s ease;
+  margin-bottom: 22px;
+}
+
+.mode-btn:active {
+  transform: scale(0.97);
+}
+
+.mode-btn--single {
+  display: flex;
+  justify-content: center;
+}
+
+.mode-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--green-darker);
+}
+
+/* ===== d-pad ===== */
+.dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.dpad-mid {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dpad-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  border: none;
+  background: var(--card-bg);
+  box-shadow: 0 3px 0 var(--shadow);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--green-darker);
+  cursor: pointer;
+  transition: transform 0.08s ease;
+}
+
+.dpad-btn:active {
+  transform: scale(0.9);
+}
+
+.hint-text {
+  color: var(--green-dark);
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+@media (max-width: 360px) {
+  #board {
+    width: 260px;
+    height: 260px;
+  }
+}

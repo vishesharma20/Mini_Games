@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Ping Pong</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ===== HOME SCREEN ===== -->
+  <section id="home-screen" class="screen active">
+    <h1 class="title">PING · PONG</h1>
+
+    <div class="avatar-row">
+      <div class="avatar-col">
+        <div class="avatar-circle" id="avatar-p1">
+          <span>P1</span>
+        </div>
+        <div class="avatar-preset-grid" data-player="p1"></div>
+        <label class="upload-btn">
+          Upload photo
+          <input type="file" accept="image/*" id="upload-p1" class="hidden">
+        </label>
+      </div>
+
+      <span class="vs-label">VS</span>
+
+      <div class="avatar-col">
+        <div class="avatar-circle" id="avatar-p2">
+          <span>P2</span>
+        </div>
+        <div class="avatar-preset-grid" data-player="p2"></div>
+        <label class="upload-btn">
+          Upload photo
+          <input type="file" accept="image/*" id="upload-p2" class="hidden">
+        </label>
+      </div>
+    </div>
+
+    <h2 class="section-label">Computer difficulty</h2>
+    <div class="difficulty-row" id="difficulty-row">
+      <button class="diff-btn" data-diff="easy">Easy</button>
+      <button class="diff-btn active" data-diff="medium">Medium</button>
+      <button class="diff-btn" data-diff="hard">Hard</button>
+    </div>
+
+    <button class="play-btn" id="btn-vs-computer">Player vs Computer</button>
+    <button class="play-btn" id="btn-vs-friend">Player vs Friend</button>
+
+    <p class="hint-text">
+      vs Computer: W / S or ↑ / ↓ to move, or drag on screen<br>
+      vs Friend: Player 1 uses W / S, Player 2 uses ↑ / ↓
+    </p>
+  </section>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <section id="game-screen" class="screen">
+    <button class="back-btn" id="btn-back">←</button>
+
+    <div class="score-row">
+      <div class="score-side">
+        <div class="avatar-circle avatar-circle--small" id="game-avatar-p1"><span>P1</span></div>
+        <span id="score-p1">0</span>
+      </div>
+      <div class="score-side">
+        <span id="score-p2">0</span>
+        <div class="avatar-circle avatar-circle--small" id="game-avatar-p2"><span>P2</span></div>
+      </div>
+    </div>
+
+    <div class="board-box">
+      <canvas id="board" width="320" height="420"></canvas>
+    </div>
+
+    <div id="game-over-panel" class="result-banner hidden">
+      <p id="game-over-text">Game over!</p>
+      <button class="play-btn play-btn--small" id="btn-play-again">Play again</button>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

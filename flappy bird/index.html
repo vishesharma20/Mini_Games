@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Flappy Face</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ===== UPLOAD / START SCREEN ===== -->
+  <section id="start-screen" class="screen active">
+    <h1 class="title">Flappy Face</h1>
+    <p class="subtitle">Turn a photo of your face into the bird!</p>
+
+    <div class="preview-circle" id="preview-circle">
+      <span id="preview-placeholder">🐦</span>
+      <img id="preview-img" class="hidden">
+    </div>
+
+    <p id="status-text" class="status-text">Upload a clear front-facing photo</p>
+
+    <label class="upload-btn" for="photo-input">Upload photo</label>
+    <input type="file" id="photo-input" accept="image/*" class="hidden">
+
+    <button class="mode-btn" id="btn-start">Start game</button>
+    <button class="skip-btn" id="btn-skip">Skip and use default bird</button>
+  </section>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <section id="game-screen" class="screen">
+    <div class="score-row">
+      <span>Score: <span id="score">0</span></span>
+      <span>Best: <span id="best-score">0</span></span>
+    </div>
+
+    <div class="board-box">
+      <canvas id="board" width="320" height="480"></canvas>
+      <button id="btn-jump-overlay" class="jump-overlay" aria-label="Jump"></button>
+    </div>
+
+    <div id="game-over-panel" class="result-banner hidden">
+      <p id="game-over-text">Game over!</p>
+      <button class="mode-btn mode-btn--small" id="btn-restart">Play again</button>
+      <button class="skip-btn" id="btn-change-photo">Change photo</button>
+    </div>
+
+    <button class="jump-btn" id="btn-jump">Tap to jump</button>
+    <p class="hint-text">Spacebar, click, or tap the button to jump</p>
+  </section>
+
+</div>
+
+<!-- face-api.js for client-side face detection (runs fully in-browser, nothing uploaded) -->
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

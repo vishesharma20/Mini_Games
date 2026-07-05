@@ -1,0 +1,262 @@
+:root {
+  --green-bg: #9acb34;
+  --green-dark: #4f7a1f;
+  --green-darker: #33530f;
+  --card-bg: #f7f7f2;
+  --banner-yellow: #f7b731;
+  --banner-text: #4a3200;
+  --white: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: var(--green-bg);
+  color: var(--green-darker);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  max-width: 460px;
+  min-height: 100vh;
+  background: var(--green-bg);
+  padding: 24px 20px 40px;
+  position: relative;
+}
+
+/* ===== screen switching ===== */
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in 0.25s ease;
+}
+
+.screen.active {
+  display: flex;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== home screen ===== */
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--green-darker);
+  text-align: center;
+  margin: 8px 0 4px;
+}
+
+.hero-emoji {
+  font-size: 2.4rem;
+  margin-bottom: 4px;
+  letter-spacing: 6px;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  color: var(--green-dark);
+  font-weight: 600;
+}
+
+.mode-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card-bg);
+  border: none;
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 0 var(--shadow);
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.08s ease;
+}
+
+.mode-btn:active {
+  transform: scale(0.97);
+}
+
+.mode-btn--single {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.mode-emoji {
+  font-size: 2rem;
+}
+
+.mode-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.mode-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--green-darker);
+}
+
+.mode-desc {
+  font-size: 0.85rem;
+  color: #6b6b60;
+}
+
+/* ===== back button ===== */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--white);
+  box-shadow: 0 2px 4px var(--shadow);
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--green-darker);
+}
+
+/* ===== section label ===== */
+.section-label {
+  font-size: 1.1rem;
+  color: var(--green-darker);
+  margin: 12px 0 10px;
+  font-weight: 700;
+}
+
+/* ===== hand box ===== */
+.hand-box {
+  width: 170px;
+  height: 170px;
+  border: 3px dashed var(--green-darker);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hand-box--hidden {
+  border-style: dashed;
+  opacity: 0.9;
+}
+
+.hand-emoji {
+  font-size: 5rem;
+  line-height: 1;
+}
+
+/* ===== result banner ===== */
+.result-banner {
+  width: 100%;
+  background: var(--banner-yellow);
+  color: var(--banner-text);
+  font-weight: 700;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 6px 0 18px;
+  font-size: 1.05rem;
+}
+
+/* ===== score ===== */
+.score-line {
+  font-weight: 700;
+  color: var(--green-darker);
+  margin: 4px 0 20px;
+  text-align: center;
+}
+
+/* ===== choice buttons ===== */
+.choice-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.choice-btn {
+  flex: 1;
+  background: var(--card-bg);
+  border: none;
+  border-radius: var(--radius);
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 0 var(--shadow);
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--green-darker);
+  transition: transform 0.08s ease;
+}
+
+.choice-btn:active {
+  transform: scale(0.94);
+}
+
+.choice-emoji {
+  font-size: 2rem;
+}
+
+/* ===== reset button ===== */
+.reset-btn {
+  background: none;
+  border: none;
+  color: var(--green-darker);
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+/* ===== pass-the-device screen ===== */
+.pass-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.pass-emoji {
+  font-size: 4rem;
+  margin-bottom: 12px;
+}
+
+.hint-text {
+  color: var(--green-dark);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* ===== responsive tweak ===== */
+@media (max-width: 380px) {
+  .hand-box {
+    width: 140px;
+    height: 140px;
+  }
+  .hand-emoji {
+    font-size: 4rem;
+  }
+}
