@@ -3,6 +3,9 @@
 Just a simple Snake game I made for fun, styled to match my Rock Paper Scissors
 game (same green background, dashed box vibe).
 
+##Live Demo
+https://vishesharma20.github.io/Mini_Games/snake%20game/
+
 ## Screenshots
 
 **Landing page**

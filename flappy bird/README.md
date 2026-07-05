@@ -4,6 +4,9 @@ Everybody makes a plain Flappy Bird clone, so I wanted to add something extra
 you upload a photo and it detects your face and turns it into the bird!
 Wanted to prank someone with it, and it definitely made people smile 😄
 
+##Live Demo
+https://vishesharma20.github.io/Mini_Games/flappy%20bird/
+
 ## Screenshots
 
 **Upload or use default bird**
