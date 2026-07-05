@@ -3,7 +3,9 @@
 Just a bunch of small browser games I made for fun over a few sessions.
 Nothing fancy, no frameworks, plain HTML, CSS, and JavaScript for every
 single one, so they all just run by opening `index.html`, no build step,
-no install, nothing.
+no install, nothing. For easier access i made an entire mini games arcade.
+#Link
+https://vishesharma20.github.io/Mini_Games/
 
 ## What's in here
 
