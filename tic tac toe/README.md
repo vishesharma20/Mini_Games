@@ -3,6 +3,9 @@
 A tic tac toe game, but you can swap X and O for literally anything 
 including, apparently, Shawn and Justin. Why not, right? 😄
 
+##Live Demo
+https://vishesharma20.github.io/Mini_Games/tic%20tac%20toe/
+
 ## What's in it
 
 - **vs Computer** with adjustable difficulty (easy / medium / hard — hard is
